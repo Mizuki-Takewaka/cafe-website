@@ -1,0 +1,309 @@
+@charset "UTF-8";
+body {
+  padding: 0%;
+  margin: 0%;
+  background-color: white;
+  z-index: 1;
+}
+body img, body a {
+  vertical-align: bottom;
+}
+body a {
+  cursor: pointer;
+}
+
+#welcome-page-container {
+  position: relative;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 999;
+  -webkit-animation-name: fadeOutAnime;
+          animation-name: fadeOutAnime;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+}
+#welcome-page-container .welcome-animation {
+  text-align: left;
+}
+#welcome-page-container .welcome-animation .flowing {
+  width: auto;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgb(158, 97, 180);
+}
+
+@-webkit-keyframes fadeOutAnime {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes fadeOutAnime {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+header {
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+}
+header .header-search-and-cart-cntainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 30px;
+}
+header .header-search-and-cart-cntainer .icon {
+  margin-right: 7px;
+}
+header .header-search-and-cart-cntainer .search-wrap input {
+  /*基本のスタイル*/
+  width: 30px;
+  height: 30px;
+  border: solid 0.2px #fff;
+  /*テキスト入力のエリアを調整*/
+  padding: 0px;
+  /*虫眼鏡アイコンを背景で指定*/
+  background-image: url("https://img.icons8.com/ios-filled/50/000000/search--v1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25px;
+  /*フォーカスしたときのトランジション設定 すべてのプロパティが0.5秒で切り替わる*/
+  transition: all 0.5s;
+}
+header .header-search-and-cart-cntainer .search-wrap input:focus {
+  /*フォーカスした時に横に伸ばす*/
+  width: 200px;
+  /*フォーカスした時の虫眼鏡アイコンの位置調整*/
+  background-position: 96% 50%;
+  /*テキスト入力が虫眼鏡アイコンに被らないように*/
+  padding-right: 40px;
+}
+header .header-search-and-cart-cntainer .cart-wrap a {
+  display: block;
+  background-image: url("https://img.icons8.com/windows/32/000000/shopping-cart.png");
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+}
+header .header-logo-container {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .header-logo-container .logo-img {
+  display: block;
+}
+header .header-logo-container .logo-img img {
+  height: 25pxd;
+}
+header .header-nav-container {
+  width: 100%;
+  height: 30px;
+}
+header .header-nav-container .navbar {
+  height: 100%;
+}
+header .header-nav-container .navbar .nav-list {
+  height: 100%;
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+header .header-nav-container .navbar .nav-list li {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  height: 30px;
+  padding: 0 30px;
+  border-left: 0.5px solid #000;
+}
+header .header-nav-container .navbar .nav-list li:last-child {
+  border-right: 1px solid #000;
+}
+header .header-nav-container .navbar .nav-list li a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: #000;
+}
+header .header-nav-container .navbar .nav-list li:hover {
+  background-color: #eee;
+}
+
+section .section-container {
+  margin: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section .section-container .zoom-box {
+  display: block;
+  overflow: hidden;
+}
+section .section-container .zoom-box a {
+  display: block;
+  cursor: pointer;
+}
+section .section-container .zoom-box a img {
+  transition: 0.3s ease-in-out;
+  max-width: 100%;
+  height: auto;
+}
+section .section-container .zoom-box a img:hover {
+  transform: scale(1.2);
+}
+
+.wrapper-main-aside {
+  display: flex;
+}
+
+@media screen and (max-width: 760px) {
+  .wrapper-main-aside {
+    display: flex;
+    flex-direction: column;
+  }
+}
+main {
+  flex: 3;
+  width: 100%;
+}
+main .main-container {
+  margin: 25px;
+  display: block;
+}
+main .main-container .main-menu-container {
+  display: block;
+}
+main .main-container .main-menu-container a {
+  display: block;
+  margin: 30px;
+}
+main .main-container .main-menu-container a img {
+  max-width: 100%;
+  height: auto;
+}
+main .main-container .main-shop-container {
+  display: block;
+}
+main .main-container .main-shop-container .product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+main .main-container .main-shop-container .product-list .each-product {
+  display: block;
+  margin: 20px;
+}
+main .main-container .main-shop-container .product-list .each-product dt a {
+  display: block;
+}
+main .main-container .main-shop-container .product-list .each-product dd {
+  margin: 10px 0;
+  text-align: center;
+}
+
+aside {
+  flex: 1;
+  border-left: 1px solid #000;
+}
+aside .aside-container {
+  display: block;
+  height: 100%;
+  margin: 20px;
+}
+aside .aside-container .aside-news-container .news_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+aside .aside-container .aside-news-container .news_list dt {
+  width: 7em;
+}
+aside .aside-container .aside-news-container .news_list dd {
+  margin-left: 0;
+  width: calc(100% - 7em);
+}
+aside .aside-container .aside-hiring-container a {
+  display: block;
+}
+
+footer {
+  padding: 60px 40px;
+  margin: 0;
+  height: auto;
+  background-color: green;
+}
+footer .footer-menu-container {
+  margin: 20px 0;
+}
+footer .footer-menu-container .menu {
+  margin: 50px 0;
+}
+footer .footer-menu-container .menu .menu-title-wrap {
+  line-height: 0;
+  border-bottom: 2px solid antiquewhite;
+  margin-top: 10px;
+}
+footer .footer-menu-container .menu .menu-title-wrap .menu-title {
+  padding: 10px;
+  background-color: green;
+  font-weight: bold;
+}
+footer .footer-menu-container .menu ul {
+  padding: 0;
+  margin-top: 30px;
+  color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+}
+footer .footer-menu-container .menu ul li {
+  list-style: none;
+}
+footer .footer-menu-container .menu ul li a {
+  text-decoration: none;
+  color: antiquewhite;
+  font-weight: 600;
+}
+footer .footer-menu-container .menu ul li a:hover {
+  color: red;
+}
+footer .sns-icon-container ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+footer .sns-icon-container ul li {
+  list-style: none;
+  margin: 0 20px;
+}
+footer .sns-icon-container ul li:hover {
+  transform: translateY(-5px);
+}
+footer .copy-right-container {
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
